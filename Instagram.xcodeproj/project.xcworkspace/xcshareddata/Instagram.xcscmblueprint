@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "46CA8573B9ABAF713A255D587A210BC7518A963B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "46CA8573B9ABAF713A255D587A210BC7518A963B" : 9223372036854775807,
+    "6A88361C12DFBF16556C3814C66E555C12A50DE3" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "AB2574C3-7FFC-4A82-9084-1C2BF400D502",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "46CA8573B9ABAF713A255D587A210BC7518A963B" : "Instagram\/",
+    "6A88361C12DFBF16556C3814C66E555C12A50DE3" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Instagram",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Instagram.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/gabrielm854\/Instagram.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "46CA8573B9ABAF713A255D587A210BC7518A963B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/gabrielm854\/parsechat.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6A88361C12DFBF16556C3814C66E555C12A50DE3"
+    }
+  ]
+}
