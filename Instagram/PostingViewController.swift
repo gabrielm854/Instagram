@@ -13,6 +13,9 @@ class PostingViewController: UIViewController {
     var greatPicture: UIImage?
     var caption: String?
     
+    @IBAction func onTap(_ sender: Any) {
+        view.endEditing(true)
+    }
     @IBOutlet weak var photoView: UIImageView!
     @IBOutlet weak var captionField: UITextField!
     @IBAction func didPost(_ sender: AnyObject) {

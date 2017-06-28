@@ -11,6 +11,9 @@ import Parse
 
 class LoginViewController: UIViewController {
     
+    @IBAction func onTap(_ sender: Any) {
+    view.endEditing(true)
+    }
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
 

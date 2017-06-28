@@ -14,11 +14,16 @@ class MainScreenViewController: UIViewController, UITableViewDataSource, UITable
     let query = PFQuery(className: "Post")
     var picture: PFFile!
     var posts: [PFObject] = []
+    var refreshControl: UIRefreshControl!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector (MainScreenViewController.didPullToRefresh(_:)), for: .valueChanged)
+        tableView.insertSubview(refreshControl, at: 0)
         getPosts()
         tableView.delegate = self
         tableView.dataSource = self
@@ -29,7 +34,13 @@ class MainScreenViewController: UIViewController, UITableViewDataSource, UITable
         
     }
     
+    func didPullToRefresh(_ refreshControl: UIRefreshControl) {
+        getPosts()
+    }
+    
     func getPosts() {
+        activityIndicator.startAnimating()
+        query.order(byDescending: "_created_at")
         query.limit = 20
         query.findObjectsInBackground {(posts: [PFObject]?, error: Error?) in
             if let posts = posts {
@@ -40,7 +51,9 @@ class MainScreenViewController: UIViewController, UITableViewDataSource, UITable
                     let picture = post["media"] as? PFFile
                     print("got the image")
                 }
-                 self.tableView.reloadData()
+                self.tableView.reloadData()
+                self.refreshControl.endRefreshing()
+                
             } else {
                 print(error?.localizedDescription)
             }
@@ -52,6 +65,7 @@ class MainScreenViewController: UIViewController, UITableViewDataSource, UITable
         print("I wanna be a dog")
         let post = posts[indexPath.row]
         cell.instaPost = post
+        activityIndicator.stopAnimating()
 //        if let picture = post["media"] as? PFFile {
 //            let caption = post["caption"] as! String
 //            cell.postPhoto.file = picture
