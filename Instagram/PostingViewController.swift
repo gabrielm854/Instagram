@@ -20,6 +20,7 @@ class PostingViewController: UIViewController {
         Post.postUserImage(image: greatPicture, withCaption: caption, withCompletion: nil)
         captionField.text = ""
         self.performSegue(withIdentifier: "afterPostSegue", sender: nil)
+        print("\n\nposted stuff")
     }
     
     @IBAction func didCancel(_ sender: Any) {

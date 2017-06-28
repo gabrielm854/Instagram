@@ -2,26 +2,76 @@
 //  MainScreenViewController.swift
 //  Instagram
 //
-//  Created by Gabriel Muñiz on 6/27/17.
+//  Created by Gabriel Muñiz on 6/28/17.
 //  Copyright © 2017 Gabriel Muñiz. All rights reserved.
 //
 
 import UIKit
 import Parse
+import ParseUI
 
-class MainScreenViewController: UIViewController {
-
+class MainScreenViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    let query = PFQuery(className: "Post")
+    var picture: PFFile!
+    var posts: [PFObject] = []
+    
+    @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        getPosts()
+        tableView.delegate = self
+        tableView.dataSource = self
+        self.tableView.separatorStyle = .none
+        
+        print("getting posts")
+        self.tableView.reloadData()
+        
+    }
+    
+    func getPosts() {
+        query.limit = 20
+        query.findObjectsInBackground {(posts: [PFObject]?, error: Error?) in
+            if let posts = posts {
+                self.posts = posts
+                for post in posts {
+                    let caption = post["caption"] as? String
+                    print(caption)
+                    let picture = post["media"] as? PFFile
+                    print("got the image")
+                }
+                 self.tableView.reloadData()
+            } else {
+                print(error?.localizedDescription)
+            }
+        }
     }
 
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostingCell", for: indexPath) as! PostingCellTableViewCell
+        print("I wanna be a dog")
+        let post = posts[indexPath.row]
+        cell.instaPost = post
+//        if let picture = post["media"] as? PFFile {
+//            let caption = post["caption"] as! String
+//            cell.postPhoto.file = picture
+//            cell.postCaption.text = caption
+        //}
+               return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        
+        return posts.count
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
 
     /*

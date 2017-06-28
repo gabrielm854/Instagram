@@ -8,12 +8,14 @@
 
 import UIKit
 import Parse
+import ParseUI
 
 class LogoutViewController: UIViewController {
 
     @IBAction func didLogout(_ sender: Any) {
         PFUser.logOutInBackground { (error: Error?) -> Void in
             PFUser.current() == nil
+            self.performSegue(withIdentifier: "logoutSegue", sender: nil)
         }
     }
     
