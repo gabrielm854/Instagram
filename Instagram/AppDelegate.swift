@@ -23,7 +23,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             configuration.server = "https://evening-harbor-43373.herokuapp.com/parse"
         })
         )
-        // Override point for customization after application launch.
+        
+        if PFUser.current() != nil {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let tabViewController = storyboard.instantiateViewController(withIdentifier: "UITabBarController")
+            
+            // let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            
+            
+            //let homeViewController = storyboard.instantiateViewController(withIdentifier: "MainScreenViewController")
+            
+            window?.rootViewController = tabViewController
+        }
         return true
     }
     
