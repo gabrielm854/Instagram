@@ -29,9 +29,6 @@ class LoginViewController: UIViewController {
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             } else {
                 print(error?.localizedDescription)
-                let OKAction = UIAlertAction(title: "Try Again", style: .default) {(action) in
-                }
-                self.loginalertController.addAction(OKAction)
                 self.present(self.loginalertController, animated: true) {
 
             }
@@ -50,9 +47,7 @@ class LoginViewController: UIViewController {
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             } else {
                 print(error?.localizedDescription)
-                let OKAction = UIAlertAction(title: "Try Again", style: .default) {(action) in
-                }
-                self.signupalertController.addAction(OKAction)
+                
                 self.present(self.signupalertController, animated: true)
                     
                 }
@@ -62,6 +57,11 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let OKAction = UIAlertAction(title: "Try Again", style: .default, handler: nil)
+        self.loginalertController.addAction(OKAction)
+        
+        let CancelAction = UIAlertAction(title: "Try Again", style: .default, handler: nil)
+        self.signupalertController.addAction(CancelAction)
     }
 
     override func didReceiveMemoryWarning() {
