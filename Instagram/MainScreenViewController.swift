@@ -31,6 +31,8 @@ class MainScreenViewController: UIViewController, UITableViewDataSource, UITable
         
         print("getting posts")
         self.tableView.reloadData()
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 50
         
     }
     
