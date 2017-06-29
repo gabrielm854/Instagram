@@ -41,6 +41,7 @@ class MainScreenViewController: UIViewController, UITableViewDataSource, UITable
     func getPosts() {
         activityIndicator.startAnimating()
         query.order(byDescending: "_created_at")
+        query.includeKey("author")
         query.limit = 20
         query.findObjectsInBackground {(posts: [PFObject]?, error: Error?) in
             if let posts = posts {
@@ -80,6 +81,16 @@ class MainScreenViewController: UIViewController, UITableViewDataSource, UITable
         return posts.count
     }
     
+    
+    //Segue to detailsViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! PostingCellTableViewCell
+        let indexPath = tableView.indexPath(for: cell)
+        let post = posts[(indexPath!.row)]
+        let detailViewController = segue.destination as! DetailViewController
+        detailViewController.post = post
+        
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

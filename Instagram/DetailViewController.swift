@@ -7,13 +7,31 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var postImage: PFImageView!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var timestampLabel: UILabel!
+    @IBOutlet weak var postCaption: UILabel!
+    
+    var post: PFObject?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        if let post = post {
+            self.postImage.file = post["media"] as? PFFile
+            self.postImage.loadInBackground()
+            self.postCaption.text = post["caption"] as? String
+            self.usernameLabel.text = post["author"] as? String
+            let createdAt = post.createdAt
+            if let timestamp = createdAt{
+                self.timestampLabel.text = "Posted \(timestamp)"
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {

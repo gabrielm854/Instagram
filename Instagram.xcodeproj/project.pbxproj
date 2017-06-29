@@ -16,6 +16,7 @@
 		8617585E1F02C31D001F6882 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8617585C1F02C31D001F6882 /* LaunchScreen.storyboard */; };
 		861758691F02C31D001F6882 /* InstagramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861758681F02C31D001F6882 /* InstagramTests.swift */; };
 		861758741F02C31D001F6882 /* InstagramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861758731F02C31D001F6882 /* InstagramUITests.swift */; };
+		868BB38B1F04B49700831D8F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868BB38A1F04B49700831D8F /* DetailViewController.swift */; };
 		86D5B7FF1F02F89D00F47896 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5B7FE1F02F89D00F47896 /* LoginViewController.swift */; };
 		86D5B8031F030A5E00F47896 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5B8021F030A5E00F47896 /* CameraViewController.swift */; };
 		86D5B8051F03188500F47896 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5B8041F03188500F47896 /* TabBarController.swift */; };
@@ -63,6 +64,7 @@
 		8617586F1F02C31D001F6882 /* InstagramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstagramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		861758731F02C31D001F6882 /* InstagramUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramUITests.swift; sourceTree = "<group>"; };
 		861758751F02C31D001F6882 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		868BB38A1F04B49700831D8F /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		86D5B7FE1F02F89D00F47896 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		86D5B8021F030A5E00F47896 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		86D5B8041F03188500F47896 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				86D9C4CC1F034FD90076C851 /* LogoutViewController.swift */,
 				86065C521F0413AD0032EFB7 /* MainScreenViewController.swift */,
 				86065C541F0413F40032EFB7 /* PostingCellTableViewCell.swift */,
+				868BB38A1F04B49700831D8F /* DetailViewController.swift */,
 			);
 			path = Instagram;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				861758541F02C31D001F6882 /* AppDelegate.swift in Sources */,
 				86D9C4C91F031FE40076C851 /* Post.swift in Sources */,
 				86065C531F0413AD0032EFB7 /* MainScreenViewController.swift in Sources */,
+				868BB38B1F04B49700831D8F /* DetailViewController.swift in Sources */,
 				86D5B8051F03188500F47896 /* TabBarController.swift in Sources */,
 				86D9C4CD1F034FD90076C851 /* LogoutViewController.swift in Sources */,
 			);
