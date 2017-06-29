@@ -11,6 +11,11 @@ import Parse
 
 class LoginViewController: UIViewController {
     
+    //User authentification
+    let loginalertController = UIAlertController(title: "Login Error", message: "The username or password entered is not correct.", preferredStyle: .alert)
+    let signupalertController = UIAlertController(title: "Sign Up Error", message: "You need to enter a valid username and password.", preferredStyle: .alert)
+    
+    
     @IBAction func onTap(_ sender: Any) {
     view.endEditing(true)
     }
@@ -24,10 +29,15 @@ class LoginViewController: UIViewController {
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             } else {
                 print(error?.localizedDescription)
+                let OKAction = UIAlertAction(title: "Try Again", style: .default) {(action) in
+                }
+                self.loginalertController.addAction(OKAction)
+                self.present(self.loginalertController, animated: true) {
+
             }
         }
     }
-    
+    }
     
     @IBAction func didSignUp(_ sender: Any) {
         let newUser = PFUser()
@@ -40,10 +50,14 @@ class LoginViewController: UIViewController {
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             } else {
                 print(error?.localizedDescription)
+                let OKAction = UIAlertAction(title: "Try Again", style: .default) {(action) in
+                }
+                self.signupalertController.addAction(OKAction)
+                self.present(self.signupalertController, animated: true)
+                    
+                }
             }
         }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
