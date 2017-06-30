@@ -91,7 +91,6 @@ class MainScreenViewController: UIViewController, UITableViewDataSource, UITable
         let post = posts[(indexPath!.row)]
         let detailViewController = segue.destination as! DetailViewController
         detailViewController.post = post
-        
     }
     
     override func didReceiveMemoryWarning() {

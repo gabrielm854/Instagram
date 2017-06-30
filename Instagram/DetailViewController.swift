@@ -26,7 +26,9 @@ class DetailViewController: UIViewController {
             self.postImage.file = post["media"] as? PFFile
             self.postImage.loadInBackground()
             self.postCaption.text = post["caption"] as? String
-            self.usernameLabel.text = post["author"] as? String
+            let author = post["author"] as! PFUser
+            let username = author.username as! String
+            self.usernameLabel.text = username as? String
             let createdAt = post.createdAt
             if let timestamp = createdAt{
                 self.timestampLabel.text = "Posted \(timestamp)"

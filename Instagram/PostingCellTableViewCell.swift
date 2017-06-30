@@ -13,12 +13,15 @@ import ParseUI
 class PostingCellTableViewCell: UITableViewCell {
     @IBOutlet weak var postPhoto: PFImageView!
     @IBOutlet weak var postCaption: UILabel!
+    @IBOutlet weak var usernameLabe: UILabel!
 
     var instaPost: PFObject! {
         didSet {
             self.postPhoto.file = instaPost["media"] as? PFFile
             self.postPhoto.loadInBackground()
             self.postCaption.text = instaPost["caption"] as? String
+            let author = instaPost["author"] as! PFUser
+            self.usernameLabe.text = author.username as? String
         }
     }
 

@@ -22,10 +22,10 @@ The following **optional** features are implemented:
 
 - [ ] Style the login page to look like the real Instagram login page.
 - [ ] Style the feed to look like the real Instagram feed.
-- [ ] User can use a tab bar to switch between all "Instagram" posts and posts published only by the user.
+- [x] User can use a tab bar to switch between all "Instagram" posts and posts published only by the user.
 - [ ] Add a custom camera using the CameraManager library.
 - [ ] User can load more posts once he or she reaches the bottom of the feed using infinite scrolling.
-- [ ] Show the username and creation time for each post.
+- [x] Show the username and creation time for each post.
 - [ ] After the user submits a new post, show a progress HUD while the post is being uploaded to Parse
 - [ ] User Profiles: Allows the logged in user to add a profile photo, Display the profile photo with each post, Tapping on a post's username or profile photo goes to that user's profile page
 - [ ] User can comment on a post and see all comments for each post in the post details screen.
@@ -46,7 +46,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/yToFZPy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/IlJHqmR.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
